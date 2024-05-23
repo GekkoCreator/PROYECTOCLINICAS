@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Doctor</title>
+  <link rel="stylesheet" href="styles-perfil-doctor.css">
+</head>
+<body>
+  <div class="perfil">
+    <h1>Perfil del Doctor</h1>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Correo Electrónico:</strong> <span id="email"></span></p>
+    <p><strong>Número de Celular:</strong> <span id="celular"></span></p>
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script>
+    function cerrarSesion() {
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        document.getElementById('nombre').textContent = user.nombre;
+        document.getElementById('email').textContent = user.email;
+        document.getElementById('celular').textContent = user.celular;
+      } else {
+        alert('No se encontraron datos del usuario.');
+      }
+    });
+  </script>
+</body>
+</html>
+

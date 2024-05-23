@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro y Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="custom-style.css">
+</head>
+<body>
+  <div class="titulo-principal">
+    <h1>Bienvenidos a CLINICAS</h1>
+  </div>
+
+  <div class="contenedores">
+    <div class="contenedor" id="contenedor-doctores">
+      <h2>Doctores</h2>
+      <button onclick="mostrarOverlay('registroDoctor')">Registrarse</button>
+      <button onclick="mostrarOverlay('loginDoctor')">Iniciar sesión</button>
+    </div>
+
+    <div class="contenedor" id="contenedor-pacientes">
+      <h2>Pacientes</h2>
+      <button onclick="mostrarOverlay('registroPaciente')">Registrarse</button>
+      <button onclick="mostrarOverlay('loginPaciente')">Iniciar sesión</button>
+    </div>
+  </div>
+
+  <!-- Overlays -->
+  <div id="overlay-registroDoctor" class="overlay">
+    <div class="overlay-contenido">
+      <h2>Registro Doctor</h2>
+      <input type="text" id="nombreDoctor" placeholder="Nombre">
+      <input type="email" id="emailDoctor" placeholder="Correo electrónico">
+      <input type="text" id="celularDoctor" placeholder="Número de celular">
+      <input type="password" id="passwordDoctor" placeholder="Contraseña">
+      <button onclick="registrarDoctor()">Registrarse</button>
+      <button onclick="cerrarOverlay('registroDoctor')">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="overlay-loginDoctor" class="overlay">
+    <div class="overlay-contenido">
+      <h2>Login Doctor</h2>
+      <input type="email" id="emailDoctorLogin" placeholder="Correo electrónico">
+      <input type="password" id="passwordDoctorLogin" placeholder="Contraseña">
+      <button onclick="loginDoctor()">Iniciar sesión</button>
+      <button onclick="cerrarOverlay('loginDoctor')">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="overlay-registroPaciente" class="overlay">
+    <div class="overlay-contenido">
+      <h2>Registro Paciente</h2>
+      <input type="text" id="nombrePaciente" placeholder="Nombre">
+      <input type="email" id="emailPaciente" placeholder="Correo electrónico">
+      <input type="text" id="celularPaciente" placeholder="Número de celular">
+      <input type="password" id="passwordPaciente" placeholder="Contraseña">
+      <button onclick="registrarPaciente()">Registrarse</button>
+      <button onclick="cerrarOverlay('registroPaciente')">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="overlay-loginPaciente" class="overlay">
+    <div class="overlay-contenido">
+      <h2>Login Paciente</h2>
+      <input type="email" id="emailPacienteLogin" placeholder="Correo electrónico">
+      <input type="password" id="passwordPacienteLogin" placeholder="Contraseña">
+      <button onclick="loginPaciente()">Iniciar sesión</button>
+      <button onclick="cerrarOverlay('loginPaciente')">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
